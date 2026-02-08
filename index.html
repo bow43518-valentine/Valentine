@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>💖 For James – Valentine 💖</title>
 
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #fff0f5, #ffe4e1);
+  color: #b30059;
+  text-align: center;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+h1, h2 {
+  color: #e60073;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 520px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(255, 0, 102, 0.25);
+}
+
+button {
+  background: #ff4d88;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #e6005c;
+}
+
+input, textarea {
+  width: 90%;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #ffb3cc;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 0, 102, 0.3);
+}
+
+.heart {
+  position: fixed;
+  color: #ff4d88;
+  font-size: 24px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>💖 Happy Valentine’s Day 💖</h1>
+  <p>เว็บนี้ทำมาเพื่อ <b>พี่เจมส์</b> คนเดียวเลยนะ</p>
+</section>
+
+<section>
+  <div class="card">
+    <h2>💌 จากใจของเค้า</h2>
+    <p>
+      รักพี่เจมส์มากๆ 💕<br>
+      อยู่ด้วยกันแบบนี้ไปนานๆนะ<br>
+      ขอบคุณที่อยู่ข้างกันเสมอ
+    </p>
+    <p>— เค้าคนนี้ของพี่ 💖</p>
+  </div>
+</section>
+
+<section>
+  <h2>📸 ความทรงจำของเรา</h2>
+  <p>ทุกภาพคือช่วงเวลาที่เค้ารักมากที่สุด</p>
+  <div class="gallery">
+    <img src="images/1.jpg">
+    <img src="images/2.jpg">
+    <img src="images/3.jpg">
+    <img src="images/4.jpg">
+    <img src="images/5.jpg">
+    <img src="images/6.jpg">
+    <img src="images/7.jpg">
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>💖 ควิซคนรู้ใจ</h2>
+
+    <p>วันครบรอบของเราคือวันอะไร?</p>
+    <input id="q1" placeholder="ใบ้: เดือนมกราคม 😉">
+
+    <p>พี่เจมส์รู้ไหมว่าเค้ารักพี่แค่ไหน?</p>
+    <input id="q2" placeholder="ตอบยังไงก็ได้ แต่ต้องจากใจ">
+
+    <p>จะจับมือเค้าไปด้วยกันนานๆไหม 💍</p>
+    <input id="q3" placeholder="เค้ารอฟังคำตอบอยู่นะ">
+
+    <button onclick="checkQuiz()">ส่งคำตอบ 💌</button>
+    <p id="quizResult"></p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>❤️ วันสำคัญของเรา</h2>
+    <p>📅 13 มกราคม</p>
+    <p>วันธรรมดาที่กลายเป็นวันที่พิเศษที่สุด</p>
+  </div>
+</section>
+
+<script>
+function checkQuiz() {
+  document.getElementById("quizResult").innerText =
+    "ไม่ว่าคำตอบจะเป็นยังไง เค้าก็เลือกพี่เจมส์ทุกวันอยู่แล้ว 💖";
+}
+
+// floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = "100vh";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 450);
+</script>
+
+</body>
+</html>
